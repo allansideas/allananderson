@@ -8,13 +8,45 @@
 //----------------------------------------------
 // Html5 Boilerplate overrides
 //----------------------------------------------
-$line-height: 1.4;  // 1.4 for true normalization
+/*=VARIABLES - GRID
+------------------------------------------------*/
+$columns: 12;
+$column-width: 60px;
+$gutter-width: 20px;
+$max-width: $columns * ($column-width + $gutter-width);
+ 
+ 
+/*=VARIABLES - FONTS
+------------------------------------------------*/
+$font-base: 15px;
+$font-base-line-height: 24px;
+
+/*=COLORS
+------------------------------------------------*/
+
 $font-color: #222;
 $font-family: sans-serif;
-$font-size: 1em;
 $link-color: #00e;
 $link-hover-color: #06e;
 $link-visited-color: #551a8b;
 $selected-font-color: #fff;
 $selected-background-color: #ff5e99;
 $invalid-background-color: #f0dddd;
+
+$bright_color_1: #FFC9DF;
+$bright_color_1_compliment: desaturate(darken($bright_color_1, 20%), 15%);
+$bright_color_2: #C9EFFF;
+$bright_color_2_compliment: darken($bright_color_2, 40%);
+$light_color_1: #E1DFE0;
+$light_color_2: #A3A6B9;
+$dark_color_1: #504F55;
+$dark_color_2: #1C1C1E;
+$dark_color_3: #131315;
+$dark_color_4: #1a1f23;
+
+//$light_color_1: lighten(#ccc7aa, 10%);
+//$light_color_2: #ccc7aa;
+//$dark_color_1: #6e7a66;
+//$dark_color_2: #4c564e;
+//$dark_color_3: #323941;
+//$dark_color_4: #1a1f23;

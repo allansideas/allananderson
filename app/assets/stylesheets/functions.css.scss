@@ -1,0 +1,21 @@
+@function em($target, $context: $font-base) {
+  @if $target == 0 { @return 0 }
+  @return $target / $context + 0em;
+}
+
+@function perc($width, $container-width: $max-width) {
+  @return percentage($width / $container-width);
+}
+
+@function lh($amount: 1, $context: $font-base) {
+  @return em($font-base-line-height * $amount, $context);
+}
+
+@mixin col($n, $padding: 0px, $border: 0px, $container-width: $max-width) {
+   float: left;
+   margin-right: percentage($gutter-width / $container-width);
+   width:  percentage(($n * ($column-width + $gutter-width) - $gutter-width - ($padding * 2) - ($border * 2)) / $container-width);
+   border-width: $border;
+   padding: em($padding, $font-base) percentage($padding / $container-width);
+}
+

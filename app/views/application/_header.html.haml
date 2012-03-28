@@ -1,2 +1,16 @@
-%header#header
-  %h1 Allananderson
+%header#header.cf
+  .container.cf
+    %h1.cf=link_to "ALLAN ANDERSON", root_path
+  -#.hrule &nbsp;
+.nav_full_width_container
+  .container
+    %nav#nav.cf
+      %ul
+        %li.first
+          =link_to "About me", root_path
+        %li 
+          =link_to "Portfolio", root_path
+        %li
+          =link_to "Expirements", root_path
+        %li
+          =link_to "Ramblings", root_path

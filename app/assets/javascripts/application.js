@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require h5bp
+//= require 'jquery.transition'
+//= require 'jquery.transform2d'
+//= require 'jquery.fittext'
+//= require 'jquery.easing'
+//= require 'jquery.lettering-0.6.1.min'
+//= require 'pages'
 

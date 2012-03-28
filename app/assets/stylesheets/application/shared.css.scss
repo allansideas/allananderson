@@ -1,0 +1,82 @@
+a.more {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+}
+p.small {
+  font-size: em(12px)
+}
+.hrule {
+  margin: lh() 0 0 0;
+  display: block;
+  clear: both;
+  height: 3px;
+  width: 100%;
+  background: $bright_color_1_compliment;
+}
+
+.block {
+  margin-bottom: lh();
+  position: relative;
+}
+
+.block_with_image_left {
+  margin-bottom: 0;
+  h4, p {
+    margin: 0;
+  }
+  .image {
+    float: left;
+    margin-right: lh();
+    width: 50px;
+    height: 50px;
+    border: solid 4px $light_color_1;
+    overflow: hidden;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }  
+}
+
+
+.JS_flipClick {
+  &.block {
+    padding: 0 !important;
+  }
+  .flip_front_content {
+    padding: $font-base-line-height;
+    height: 100px;
+    width: 100%;
+    height: 100%;
+  }
+  .flip_back_content {
+    padding: $font-base-line-height;
+    width: 100%;
+    height: 100%;
+    background: $dark_color_3 image-url('bg_3.jpg');
+    color: $light_color_1;
+    display: none;
+    height: 100px;
+  }
+}
+
+.animatible {
+  -webkit-animation-duration: 0.4s;
+}
+
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}

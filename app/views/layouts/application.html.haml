@@ -6,10 +6,10 @@
   %body{ :class => "#{ controller.controller_name }" }
     = render "chromeframe"
     = render "header"
-
-    #main{ :role => "main" }
-      = render "flashes"
-      = yield
+    #container
+      %section#content.cf{ :role => "main" }
+        = render "flashes"
+        = yield
 
     = render "footer"
 

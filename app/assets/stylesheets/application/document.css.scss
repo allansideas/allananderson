@@ -4,7 +4,227 @@
 
 //-----------------------------------------
 // Document styles
-//-----------------------------------------
+//----------------------------------------- 
 
 html {}
-body {}
+body {
+  background: #fff;
+  //background: $dark_color_2 image-url('bg_2_light.jpg');
+  font-family: 'GudeaRegular', 'Helvetica', 'Arial', sans-serif;
+  letter-spacing: 0.2px;
+  font-size: em(15px);
+  color: #666;
+}
+
+#header {
+  -webkit-transition: background-position 2s ease;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ececec), color-stop(1, #ccc));
+  background: -moz-linear-gradient(#ececec 0%, #ccc 100%);
+
+  -webkit-background-size: 44px 44px;
+  background-color: #fff;
+  background: -webkit-gradient(linear, 0 0, 44 44,
+    color-stop(0.00, rgba(255,255,255,0.27)),
+    color-stop(0.25, rgba(255,255,255,0.27)),
+    color-stop(0.26, rgba(255,255,255,0)),
+    color-stop(0.50, rgba(255,255,255,0)),
+    color-stop(0.51, rgba(255,255,255,0.27)),
+    color-stop(0.75, rgba(255,255,255,0.27)),
+    color-stop(0.76, rgba(255,255,255,0)),
+    color-stop(1.00, rgba(255,255,255,0))
+  ), -webkit-gradient(linear, left bottom, left top, color-stop(0, darken(#ececec, 4%)), color-stop(1, darken(#ececec, 4%)));
+  background: -moz-repeating-linear-gradient(top left -30deg,
+    rgba(255,255,255,0.17),
+    rgba(255,255,255,0.17) 15px,
+    rgba(255,255,255,0) 15px,
+    rgba(255,255,255,0) 30px
+  ), -moz-linear-gradient(#ececec 0%, #ececec 100%);
+  &:hover {
+    background-position: 88px 0;
+  }
+  h1 {
+    -webkit-transition: all 0.2s ease-in-out;
+    -webkit-animation-duration: 1.2s;
+    text-shadow: 0 0 1px $bright_color_2_compliment;
+    display: none;
+    width: 620px;
+    padding: 0;
+    color: $dark_color_4;
+    font-family: 'Virgo01Regular', serif;
+    //line-height: 1em;
+    height: auto;
+    &:hover {
+      -webkit-transform: scale(1.02);
+      span {
+        @include single-box-shadow(#ccc, 4px, 4px, 10px);
+      }
+    }
+    span { 
+      @include single-box-shadow(#ccc, 2px, 2px, 5px);
+      @include border-radius(7px);
+      -webkit-animation-duration: 2.2s;
+      color: $bright_color_2_compliment;
+      text-align: center;
+      background: $bright_color_1;
+      display: inline-block;
+      width: 100% / 14%;
+      padding: 4px 0 6px 0;
+      vertical-align: middle;
+      //opacity: 0;
+      border-top: solid 4px darken($bright_color_1, 5%);
+      border-bottom: solid 4px darken($bright_color_1, 5%);
+      &.odd {
+        background: $bright_color_2;
+        color: $bright_color_1_compliment ;
+        border-top: solid 4px darken($bright_color_2, 5%);
+        border-bottom: solid 4px darken($bright_color_2, 5%);
+      }
+      &.char3 {
+        @include rotate (2deg);
+      }
+      &.char5 {
+        @include rotate (-2deg);
+      }
+      &.char9 {
+        @include rotate (-2deg);
+      }
+      &.char11 {
+        @include rotate (-2deg);
+      }
+      &.char14 {
+        @include rotate (5deg);
+      }
+      &.char6 { 
+        background: transparent; border: none;
+        @include single-box-shadow(none);
+      }
+    }
+  }
+}
+
+.nav_full_width_container {
+  background: $bright_color_2;
+  border-top: solid 4px darken($bright_color_2, 10%);
+  border-top: solid 1px darken($bright_color_2, 40%);
+  border-bottom: solid 1px darken($bright_color_2, 40%);
+  #nav {
+    ul {
+      list-style: none; 
+      padding: 0; 
+      margin: 0;
+      li {
+        float: left;
+        list-style: none;
+        &.first a {padding-left: 0;}
+        a {
+          font-family: 'GudeaBold', sans-serif;
+          letter-spacing: 2px;
+          font-size: em(12px);
+          font-weight: bold;
+          display: block;
+          text-decoration: none;
+          color: $bright_color_2_compliment;
+          text-transform: uppercase;
+          float: left;
+          line-height: 1em;
+          padding: 4px 10px 3px 10px;
+          &:hover {
+            color: $bright_color_1_compliment;
+          }
+        }
+      }
+    }
+  }
+}
+#content {
+  .focus {
+    margin-bottom: lh();
+   }
+  .aside {
+    .block {
+      margin-top: 35px;
+      width: 116px;
+      -webkit-transition: all 2s ease;
+      &:hover {
+        -webkit-transform-origin: 50% 50%; 
+        -webkit-transform: rotate(360deg);
+        .circle {
+          @include border-radius(0px);
+          //-webkit-transform: scaleX(4);
+          &.circle_odd {
+            border-color: $bright_color_2_compliment;
+            @include single-box-shadow(#000, 0px, 0px, 3px, inset);
+          }
+          &.circle_even {
+            border-color: $bright_color_1_compliment;
+            @include single-box-shadow(#000, 0px, 0px, 3px, inset);
+          }
+        }
+      }
+      .circle {
+        -webkit-transition: all 2s linear;
+        float: left;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        border-style: solid;
+        border-width: 18px;
+        @include border-radius(20px);
+        &.third { margin-right: 0;}
+        &.bottom { margin-bottom: 0;}
+      }
+      .circle_odd {
+        width: 0px;
+        height: 0px; 
+        @include single-box-shadow($bright_color_2_compliment, 0px, 0px, 0px);
+        border-color: $bright_color_1;
+      }
+      .circle_even {
+        width: 0px;
+        height: 0px; 
+        border-color: $bright_color_2;
+        @include single-box-shadow($bright_color_1_compliment, 0px, 0px, 0px);
+      }
+    }
+  }
+  .features {
+    clear: both;
+    h2 {
+      border-bottom: solid 1px $bright_color_1;
+      width: perc($max-width) - perc($font-base-line-height);
+      line-height: em(24px);
+    }
+    .block {
+      background: $light_color_1 image-url('bg_1.jpg');
+      @include border-radius(7px);
+      @include single-box-shadow($bright_color_2, 0px, 0px, 3px);
+      -webkit-transition: all 1s ease;
+      &:hover {
+        background-position: 0px -80px;
+        @include single-box-shadow($bright_color_2_compliment, 0px, 0px, 10px);
+      }
+      h3 {margin-bottom: 0;}
+      h4 {margin: 0 0 lh(0.5) 0;}
+      p { font-size: em(14px);}
+      .image {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: lh(0.5);
+        height: 150px;
+        border: solid 1px $bright_color_1_compliment;
+      }
+    }
+  }
+}
+
+#footer {
+  background: $dark_color_2 image-url('bg_2.jpg');
+  .hrule {margin: 0;}
+  .container {
+    padding-top: lh();
+    .block {
+      @include single-box-shadow($bright_color_1_compliment, 0px, 0px, 3px);
+      background: $light_color_1 image-url('bg_1.jpg');
+      @include border-radius(7px);
+    }
+  }
+}

@@ -52,6 +52,11 @@ Allananderson::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'pages#index'
 
+  match 'fonts_demo' => 'pages#fonts_demo'
+
+  namespace :expirements do
+    match 'qr_backbone' => 'pages#qr_backbone', :as => :qr_backbone
+  end
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

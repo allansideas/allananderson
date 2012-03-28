@@ -6,6 +6,102 @@
 // This example overrides the primary ('mobile first') styles
 // Modify as content requires.
 
-@media only screen and (min-width: 35em) {
-  // Style adjustments for viewports that meet the condition
+@media screen and (max-width: 955px) {
+  #content {
+    .features {
+      div.block {
+       @include col(6, $font-base-line-height);
+         &:nth-of-type(3n) {
+           clear: left;
+         }
+      }
+    }
+  }
+}
+
+/*TABLET
+---------------------------------------*/
+@media screen and (max-width: 768px) {
+  #header {
+    h1 {
+      width: 90%;
+      margin: lh(0.25) auto;
+    }
+  }
+  #content {
+    article.focus {
+      @include col(12);
+    }
+    aside.aside {
+      width: 100%;
+      .block{
+        @include col(6, $font-base-line-height);
+        &:nth-of-type(3n) {
+          clear: left;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:500px),(max-device-width:320px) and (orientation:portrait) {
+  #header {
+    left: 0;
+    h1 {
+      width: 100%;
+      margin:lh(0.25) 0;
+    }
+    .hrule {  width: 100%;}
+  }
+  #container {
+    padding-left: 0;
+    margin: 0 auto;
+    width: 300px;
+    #footer, #content, .focus, aside.aside, .features {
+      width: 100%; margin: 0 auto;
+      .block {
+        float: none !important;
+        padding: lh() perc($font-base-line-height, 300px);
+        width: 100% - perc($font-base-line-height, 300px) * 2;
+        margin-right: 0;
+        font-size: em(12px)
+      }
+    }
+    #content {
+      section.features {clear: both;}
+      aside.aside { 
+        .block{
+          width: 100% - perc($font-base-line-height, 300px) * 2;
+          padding: 0;
+          clear: left;
+          h3 {margin-bottom: 0px; }
+          p {margin: 0px; }
+        }
+      }
+      .block_with_image_left {
+        .image {
+          float: left;
+          margin-right: lh();
+          width: 60px;
+          height: 60px;
+          border: solid 2px $light_color_1;
+          overflow: hidden;
+          img {
+            width: 100%;
+            display: block;
+          }
+        }  
+      }
+    }
+    #footer {
+      left: 0;
+      margin-left: 0;
+      padding: 0;
+      .block {
+        background: #dark_color_3;
+        color: $light_color_1;
+        margin-bottom: 0;
+      }
+    }
+  }
 }

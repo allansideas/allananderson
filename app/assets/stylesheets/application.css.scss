@@ -18,15 +18,27 @@
 //-----------------------------------------
 @include h5bp-normalize;
 
-//-----------------------------------------
-// Custom application partials
-//-----------------------------------------
-@import "application/chromeframe";
-@import "application/document";
-@import "application/media_queries"; // Media queries last
 
 //-----------------------------------------
 // Append includes
 //-----------------------------------------
 @include h5bp-helpers;
 @include h5bp-media;
+@import "compass/css3";
+@import "compass/utilities";
+@import "animate";
+@import "fonts";
+@import "font_awesome";
+
+@import 'functions';
+
+//-----------------------------------------
+// Custom application partials
+//-----------------------------------------
+@import "application/chromeframe";
+@import 'application/base';
+@import 'application/shared';
+@import "application/document";
+@import 'pages';
+@import "fonts_demo";
+@import "application/media_queries"; // Media queries last
